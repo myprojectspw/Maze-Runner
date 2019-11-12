@@ -1,14 +1,18 @@
+Ôªø// MazeRunner.cpp : Ten plik zawiera funkcjƒô ‚Äûmain‚Äù. W nim rozpoczyna siƒô i ko≈Ñczy wykonywanie programu.
+//
+
+#include "pch.h"
+#include <iostream>
 #include <stdio.h>
 #include <assert.h>
 #include <stdlib.h>
-
 char** maze;
 int maze_size;
 int start_row, start_col;
 int stop_row, stop_col;
 
 typedef struct step_t {
-	struct step_t* up, * down, * left, * right;
+	struct step_t* up, *down, *left, *right;
 	int r, c;
 } step_t;
 
@@ -29,11 +33,11 @@ void maze_read(const char* file_name, int size)
 
 		for (int c = 0; c < size; c++) {
 			maze[r][c] = fgetc(f);
-			if (maze[r][c] == 'a') { // znalaz≥em start
+			if (maze[r][c] == 'a') { // znalaz≈Çem start
 				start_row = r;
 				start_col = c;
 			}
-			if (maze[r][c] == 'b') { // znalaz≥em stop
+			if (maze[r][c] == 'b') { // znalaz≈Çem stop
 				stop_row = r;
 				stop_col = c;
 				maze[r][c] = ' ';
@@ -66,43 +70,43 @@ step_t* make_step(int new_col, int new_row)
 
 int go(step_t* me) {
 
-	// czy stanπ≥em w wyjúciu?
+	// czy stanƒÖ≈Çem w wyj≈õciu?
 	if (me->r == stop_row && me->c == stop_col)
-		return 1; // tak! wracam natychmiat do punktu startowego, bo znam juø drogÍ. Droga jest oznaczona 'x' w mapie
+		return 1; // tak! wracam natychmiat do punktu startowego, bo znam ju≈º drogƒô. Droga jest oznaczona 'x' w mapie
 
-	maze[me->r][me->c] = '+'; // oznacz miejsce, w ktÛrym by≥em
+	maze[me->r][me->c] = '+'; // oznacz miejsce, w kt√≥rym by≈Çem
 
-	// czy mogÍ iúÊ w gÛrÍ?
+	// czy mogƒô i≈õƒá w g√≥rƒô?
 	if (maze[me->r - 1][me->c] == ' ') {
 		me->up = make_step(me->c, me->r - 1);
-		if (go(me->up)) // idÍ do gÛry
-			return 1; // wszed≥em na STOP
+		if (go(me->up)) // idƒô do g√≥ry
+			return 1; // wszed≈Çem na STOP
 	}
 
-	// czy moge iúc w lewo?
+	// czy moge i≈õc w lewo?
 	if (maze[me->r][me->c - 1] == ' ') {
 		me->left = make_step(me->c - 1, me->r);
-		if (go(me->left)) // no to idÍ w lewo
-			return 1; // wpad≥em na STOP
+		if (go(me->left)) // no to idƒô w lewo
+			return 1; // wpad≈Çem na STOP
 	}
 
-	// czy mogÍ iúÊ w dÛ≥
+	// czy mogƒô i≈õƒá w d√≥≈Ç
 	if (maze[me->r + 1][me->c] == ' ') {
 		me->down = make_step(me->c, me->r + 1);
-		if (go(me->down)) // idÍ w dÛ≥
-			return 1; // wpad≥em na STOP
+		if (go(me->down)) // idƒô w d√≥≈Ç
+			return 1; // wpad≈Çem na STOP
 	}
 
-	// czy mogÍ iúÊ w prawo?
+	// czy mogƒô i≈õƒá w prawo?
 	if (maze[me->r][me->c + 1] == ' ') {
 		me->right = make_step(me->c + 1, me->r);
-		if (go(me->right)) // idÍ w prawo
-			return 1; // wszed≥em na STOP
+		if (go(me->right)) // idƒô w prawo
+			return 1; // wszed≈Çem na STOP
 	}
 
-	// niczego nie znalaz≥em, cofamy siÍ
-	maze[me->r][me->c] = ' '; // wycofujemy siÍ
-	return 0; // wracam jedno pole, bo nie znalaz≥em STOPU
+	// niczego nie znalaz≈Çem, cofamy siƒô
+	maze[me->r][me->c] = ' '; // wycofujemy siƒô
+	return 0; // wracam jedno pole, bo nie znalaz≈Çem STOPU
 }
 
 void maze_solve(const char* file_name, int size)
@@ -113,22 +117,22 @@ void maze_solve(const char* file_name, int size)
 	// ustal punkt startowy
 	step_t* pstart = make_step(start_col, start_row);
 
-	// idü na start
+	// id≈∫ na start
 	int result = go(pstart);
 
-	// ustaw ponownie a i b, bo zosta≥y zamazne w trakcie zabawy
+	// ustaw ponownie a i b, bo zosta≈Çy zamazne w trakcie zabawy
 	maze[start_row][start_col] = 'a';
 	maze[stop_row][stop_col] = 'b';
 
-	// wyúwietl labirynt z trasπ
+	// wy≈õwietl labirynt z trasƒÖ
 	maze_show(size);
 }
 
 
 int main()
 {
-	// moøliwoúÊ podania nazwy pliku oraz wielkoúci labiryntu
-	maze_solve("C:\\Users\\ewolpaw\\source\\repos\\MazeRunner\\Labirynth.txt", 29);
+	// mo≈ºliwo≈õƒá podania nazwy pliku oraz wielko≈õci labiryntu
+	maze_solve("C:\\Users\\pa-wo\\source\\repos\\MazeRunner\\Labirynth.txt", 29);
 	//maze_solve("m:\\.public_html\\pp2\\f7d34a\\labirynt_73x73.txt", 73);
 	return 0;
 }
