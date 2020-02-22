@@ -132,7 +132,30 @@ void maze_solve(const char* file_name, int size)
 int main()
 {
 	// możliwość podania nazwy pliku oraz wielkości labiryntu
-	maze_solve("C:\\Users\\pa-wo\\source\\repos\\MazeRunner\\Labirynth.txt", 29);
+	int n;
+	do
+	{
+		printf("Welcome to algorithm projects\n");
+		printf("Select operation: \n");
+		printf("1 -- Maze Runner Algorithm\n");
+		printf("2 -- BoubleSorting\n");
+		printf("3 -- Exit from project\n");
+
+		scanf("%d", &n);
+		switch (n)
+		{
+		case 1:
+			maze_solve("C:\\Users\\pa-wo\\source\\repos\\MazeRunner\\Labirynth.txt", 29);
+			break;
+		case 2:
+			printf("Not yet implemented\n");
+			break;
+		default:
+			printf("Error");
+			break;
+		}
+	} while (n != 3);
+	
 	//maze_solve("m:\\.public_html\\pp2\\f7d34a\\labirynt_73x73.txt", 73);
 	return 0;
 }
