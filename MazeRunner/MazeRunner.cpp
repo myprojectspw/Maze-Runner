@@ -127,6 +127,26 @@ void maze_solve(const char* file_name, int size)
 	// wyświetl labirynt z trasą
 	maze_show(size);
 }
+int* sortowanie_b(int tab[], int n)
+{
+	int aa, p;
+	int N = n - 1;
+	do
+	{
+		p = 0;
+		for (int i = 0; i < N; i++)
+		{
+			if (tab[i] > tab[i + 1])
+			{
+				aa = tab[i];
+				tab[i] = tab[i + 1];
+				tab[i + 1] = aa;
+				p = 1;
+			}
+		}
+	} while (p != 0);
+	return tab;
+}
 
 
 int main()
@@ -142,13 +162,18 @@ int main()
 		printf("3 -- Exit from project\n");
 
 		scanf("%d", &n);
+		int *tab3 = (int*)malloc(sizeof(int) * 5);
 		switch (n)
 		{
 		case 1:
 			maze_solve("C:\\Users\\pa-wo\\source\\repos\\MazeRunner\\Labirynth.txt", 29);
 			break;
 		case 2:
-			printf("Not yet implemented\n");
+			tab3[0] = 1;
+			tab3[1] = 5;
+			tab3[2] = 3;
+			tab3 = sortowanie_b(tab3, 3);
+			for (int i = 0; i < 3; i++) printf("%i\n", tab3[i]);
 			break;
 		default:
 			printf("Error");
