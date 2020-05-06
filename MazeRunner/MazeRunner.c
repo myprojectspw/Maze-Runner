@@ -9,7 +9,7 @@ char** maze;
 int maze_size;
 int start_row, start_col;
 int stop_row, stop_col;
-
+//Structure of labirynth
 typedef struct step_t {
 	struct step_t* up, *down, *left, *right;
 	int r, c;
