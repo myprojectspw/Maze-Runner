@@ -2,7 +2,6 @@
 //
 
 #include "pch.h"
-#include <iostream>
 #include <stdio.h>
 #include <assert.h>
 #include <stdlib.h>
