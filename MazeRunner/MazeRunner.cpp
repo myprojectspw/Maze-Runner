@@ -2,13 +2,16 @@
 //
 
 #include "pch.h"
-#include <stdio.h>
+#include <iostream>
 #include <assert.h>
-#include <stdlib.h>
+#include <cstdlib>
+using namespace std;
+
 char** maze;
 int maze_size;
 int start_row, start_col;
 int stop_row, stop_col;
+
 //Structure of labirynth
 typedef struct step_t {
 	struct step_t* up, *down, *left, *right;
@@ -148,19 +151,21 @@ int* sortowanie_b(int tab[], int n)
 }
 
 
+
+
 int main()
 {
 	// możliwość podania nazwy pliku oraz wielkości labiryntu
 	int n;
 	do
 	{
-		printf("Welcome to algorithm projects\n");
-		printf("Select operation: \n");
-		printf("1 -- Maze Runner Algorithm\n");
-		printf("2 -- BoubleSorting\n");
-		printf("3 -- Exit from project\n");
+		cout << "Welcome to algorithm projects\n" << endl;
+		cout << "Select operation: \n" << endl;
+		cout << "1 -- Maze Runner Algorithm\n" << endl;
+		cout << "2 -- BoubleSorting\n" << endl;
+		cout << "3 -- Exit from project\n" << endl;
 
-		scanf("%d", &n);
+		cin >> n;
 		int *tab3 = (int*)malloc(sizeof(int) * 5);
 		switch (n)
 		{
@@ -172,10 +177,10 @@ int main()
 			tab3[1] = 5;
 			tab3[2] = 3;
 			tab3 = sortowanie_b(tab3, 3);
-			for (int i = 0; i < 3; i++) printf("%i\n", tab3[i]);
+			for (int i = 0; i < 3; i++) cout << tab3[i] << endl;
 			break;
 		default:
-			printf("Error");
+			cout << "Error" << endl;
 			break;
 		}
 	} while (n != 3);
