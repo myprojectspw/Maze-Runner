@@ -1,7 +1,4 @@
-﻿// MazeRunner.cpp : Ten plik zawiera funkcję „main”. W nim rozpoczyna się i kończy wykonywanie programu.
-//
-
-#include "pch.h"
+﻿
 #include <iostream>
 #include <assert.h>
 #include <cstdlib>
@@ -129,6 +126,7 @@ void maze_solve(const char* file_name, int size)
 	// wyświetl labirynt z trasą
 	maze_show(size);
 }
+//Bubble sort 
 int* sortowanie_b(int tab[], int n)
 {
 	int aa, p;
@@ -150,6 +148,25 @@ int* sortowanie_b(int tab[], int n)
 	return tab;
 }
 
+//Insertion sort
+int* sortowanie_w(int tab[], int n)
+{
+	int pom, i, j;
+	int N = n;
+	
+	for (i = 1; i < N; i++)
+	{
+		pom = tab[i];
+		j = i - 1;
+		while (j >= 0 && tab[j] > pom)
+		{
+			tab[j + 1] = tab[j];
+			j--;
+		}
+		tab[j + 1] = pom;
+	}
+	return tab;
+}
 
 
 
@@ -162,8 +179,9 @@ int main()
 		cout << "Welcome to algorithm projects\n" << endl;
 		cout << "Select operation: \n" << endl;
 		cout << "1 -- Maze Runner Algorithm\n" << endl;
-		cout << "2 -- BoubleSorting\n" << endl;
-		cout << "3 -- Exit from project\n" << endl;
+		cout << "2 -- Boubble sort\n" << endl;
+		cout << "3 -- Insertion sort\n" << endl;
+		cout << "4 -- Exit from project\n" << endl;
 
 		cin >> n;
 		int *tab3 = (int*)malloc(sizeof(int) * 5);
@@ -173,18 +191,27 @@ int main()
 			maze_solve("C:\\Users\\pa-wo\\source\\repos\\MazeRunner\\Labirynth.txt", 29);
 			break;
 		case 2:
+			cout << "Sort elements: " << endl;
 			tab3[0] = 1;
 			tab3[1] = 5;
 			tab3[2] = 3;
 			tab3 = sortowanie_b(tab3, 3);
 			for (int i = 0; i < 3; i++) cout << tab3[i] << endl;
 			break;
+		case 3:
+			cout << "Sort elements: " << endl;
+			tab3[0] = 1;
+			tab3[1] = 5;
+			tab3[2] = 3;
+			tab3 = sortowanie_w(tab3, 3);
+			for (int i = 0; i < 3; i++) cout << tab3[i] << endl;
+			break;
+			break;
 		default:
 			cout << "Error" << endl;
 			break;
 		}
-	} while (n != 3);
-	
-	//maze_solve("m:\\.public_html\\pp2\\f7d34a\\labirynt_73x73.txt", 73);
+	} while (n != 4);
+
 	return 0;
 }
