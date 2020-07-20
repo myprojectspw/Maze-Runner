@@ -7,5 +7,5 @@ A program implements two algorithms: </br>
 # Instalation
 Program requires Visual Studio 2017 to run. You have to download it as zip or clone to your disk. </br>
 In Visual Studio File->Open->Projects/Solution.</br>
-Then you should search for file .sln and choose it. The project is loaded and you have to run it by |> compailer. </br>
+Then you should search for file .sln and choose it. The project is loaded and you have to run it by |> compiler. </br>
 Enjoy! </br>
