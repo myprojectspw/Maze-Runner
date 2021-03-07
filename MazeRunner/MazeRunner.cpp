@@ -167,8 +167,85 @@ int* sortowanie_w(int tab[], int n)
 	}
 	return tab;
 }
+//Merge Sort
+void merge(int arr[], int l, int m, int r)
+{
+	int n11 = m - l + 1;
+	int n22 = r - m;
 
+	const int n1 = n11;
+	const int n2 = n22;
 
+	// Create temp arrays
+	int* L = new int[n1];
+	int* R = new int[n2];
+
+	// Copy data to temp arrays L[] and R[]
+	for (int i = 0; i < n1; i++)
+		L[i] = arr[l + i];
+	for (int j = 0; j < n2; j++)
+		R[j] = arr[m + 1 + j];
+
+	// Merge the temp arrays back into arr[l..r]
+
+	// Initial index of first subarray
+	int i = 0;
+
+	// Initial index of second subarray
+	int j = 0;
+
+	// Initial index of merged subarray
+	int k = l;
+
+	while (i < n1 && j < n2) {
+		if (L[i] <= R[j]) {
+			arr[k] = L[i];
+			i++;
+		}
+		else {
+			arr[k] = R[j];
+			j++;
+		}
+		k++;
+	}
+
+	// Copy the remaining elements of
+	// L[], if there are any
+	while (i < n1) {
+		arr[k] = L[i];
+		i++;
+		k++;
+	}
+
+	// Copy the remaining elements of
+	// R[], if there are any
+	while (j < n2) {
+		arr[k] = R[j];
+		j++;
+		k++;
+	}
+}
+
+// l is for left index and r is
+// right index of the sub-array
+// of arr to be sorted */
+void mergeSort(int arr[], int l, int r) {
+	if (l >= r) {
+		return;//returns recursively
+	}
+	int m = l + (r - l) / 2;
+	mergeSort(arr, l, m);
+	mergeSort(arr, m + 1, r);
+	merge(arr, l, m, r);
+}
+
+// UTILITY FUNCTIONS
+// Function to print an array
+void printArray(int A[], int size)
+{
+	for (int i = 0; i < size; i++)
+		cout << A[i] << " ";
+}
 
 int main()
 {
@@ -181,8 +258,8 @@ int main()
 		cout << "1 -- Maze Runner Algorithm\n" << endl;
 		cout << "2 -- Boubble sort\n" << endl;
 		cout << "3 -- Insertion sort\n" << endl;
-		cout << "4 -- Exit from project\n" << endl;
-
+		cout << "4 -- Merge Sort\n" << endl;
+		cout << "5 -- Exit from project\n" << endl;
 		cin >> n;
 		int *tab3 = (int*)malloc(sizeof(int) * 5);
 		switch (n)
@@ -206,6 +283,14 @@ int main()
 			tab3 = sortowanie_w(tab3, 3);
 			for (int i = 0; i < 3; i++) cout << tab3[i] << endl;
 			break;
+			break;
+		case 4:
+			cout << "Merge elements: " << endl;
+			tab3[0] = 1;
+			tab3[1] = 5;
+			tab3[2] = 3;
+			mergeSort(tab3, 0, 3-1);
+			printArray(tab3, 3);
 			break;
 		default:
 			cout << "Error" << endl;
