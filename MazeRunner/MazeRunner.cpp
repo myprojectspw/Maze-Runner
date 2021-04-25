@@ -239,6 +239,22 @@ void mergeSort(int arr[], int l, int r) {
 	merge(arr, l, m, r);
 }
 
+void selection_sort(int tab[], int n) //n - ilość elementów do posortowania
+{
+	int mn_index; //zmienna pomocnicza przechowująca indeks komórki 
+			//z minimalną wartością
+	for (int i = 0; i < n - 1; i++)
+	{
+		mn_index = i;
+		for (int j = i + 1; j < n; j++) //pętla wyszukuje najmniejszy element w podzbiorze nieposortowanym
+			if (tab[j] < tab[mn_index])
+				mn_index = j;
+
+		//zamiana elementu najmniejszego w podzbiorze z pierwszą pozycją nieposortowaną
+		swap(tab[i], tab[mn_index]);
+	}
+}
+
 // UTILITY FUNCTIONS
 // Function to print an array
 void printArray(int A[], int size)
@@ -253,13 +269,14 @@ int main()
 	int n;
 	do
 	{
-		cout << "Welcome to algorithm projects\n" << endl;
+		cout << "\nWelcome to algorithm projects\n" << endl;
 		cout << "Select operation: \n" << endl;
 		cout << "1 -- Maze Runner Algorithm\n" << endl;
 		cout << "2 -- Boubble sort\n" << endl;
 		cout << "3 -- Insertion sort\n" << endl;
 		cout << "4 -- Merge Sort\n" << endl;
-		cout << "5 -- Exit from project\n" << endl;
+		cout << "5 -- Selection Sort\n" << endl;
+		cout << "6 -- Exit from project\n" << endl;
 		cin >> n;
 		int *tab3 = (int*)malloc(sizeof(int) * 5);
 		switch (n)
@@ -283,7 +300,6 @@ int main()
 			tab3 = sortowanie_w(tab3, 3);
 			for (int i = 0; i < 3; i++) cout << tab3[i] << endl;
 			break;
-			break;
 		case 4:
 			cout << "Merge elements: " << endl;
 			tab3[0] = 1;
@@ -292,11 +308,19 @@ int main()
 			mergeSort(tab3, 0, 3-1);
 			printArray(tab3, 3);
 			break;
+		case 5:
+			cout << "Selection sort" << endl;
+			tab3[0] = 1;
+			tab3[1] = 5;
+			tab3[2] = 3;
+			selection_sort(tab3, 3);
+			printArray(tab3, 3);
+			break;
 		default:
 			cout << "Error" << endl;
 			break;
 		}
-	} while (n != 4);
+	} while (n != 6);
 
 	return 0;
 }
