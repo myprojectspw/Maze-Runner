@@ -166,6 +166,9 @@
   <ItemGroup>
     <Text Include="..\..\..\..\Desktop\Praca\Projekty Programistyczne\Maze-Runner\Labirynth.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\MazeRunnerLogo.jpg" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
