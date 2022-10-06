@@ -11,7 +11,6 @@ using namespace std;
 
 int main()
 {
-	// możliwość podania nazwy pliku oraz wielkości labiryntu
 	int n;
 	do
 	{
@@ -21,7 +20,6 @@ int main()
 		cout << bubble_label << endl;
 		cout << insertion_label << endl;
 		cout << merge_label << endl;
-		cout << selection_label << endl;
 		cout << exit_label << endl;
 		cin >> n;
 		int *tab3 = (int*)malloc(sizeof(int) * 5);
@@ -55,18 +53,12 @@ int main()
 			printArray(tab3, 3);
 			break;
 		case 5:
-//			cout << "selection sort" << endl;
-//			tab3[0] = 1;
-//			tab3[1] = 5;
-//			tab3[2] = 3;
-//			selection_sort(tab3, 3);
-//			printarray(tab3, 3);
+			cout << exit_program_label << endl;
 			break;
 		default:
-			cout << "Error" << endl;
 			break;
 		}
-	} while (n != 6);
+	} while (n != 5);
 
 	return 0;
 }
