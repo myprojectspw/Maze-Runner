@@ -152,8 +152,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="constans.h" />
+    <ClInclude Include="mazerunner.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="Sorting.h" />
+    <ClInclude Include="sorting.h" />
+    <ClInclude Include="utils.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MazeRunner.cpp" />
