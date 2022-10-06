@@ -276,6 +276,7 @@ int main()
 		cout << "3 -- Insertion sort\n" << endl;
 		cout << "4 -- Merge Sort\n" << endl;
 		cout << "5 -- Selection Sort\n" << endl;
+
 		cout << "6 -- Exit from project\n" << endl;
 		cin >> n;
 		int *tab3 = (int*)malloc(sizeof(int) * 5);
