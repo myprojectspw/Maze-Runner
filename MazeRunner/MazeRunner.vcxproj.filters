@@ -9,12 +9,12 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="Unit01">
+      <UniqueIdentifier>{dbcdc410-3b83-4997-b230-ce0b89bc8a1a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="utils.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
     <ClInclude Include="sorting.h">
@@ -26,6 +26,30 @@
     <ClInclude Include="constans.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
+    <ClInclude Include="utils.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="1.1.h">
+      <Filter>Unit01</Filter>
+    </ClInclude>
+    <ClInclude Include="1.2.h">
+      <Filter>Unit01</Filter>
+    </ClInclude>
+    <ClInclude Include="1.3.h">
+      <Filter>Unit01</Filter>
+    </ClInclude>
+    <ClInclude Include="1.4.h">
+      <Filter>Unit01</Filter>
+    </ClInclude>
+    <ClInclude Include="1.5.h">
+      <Filter>Unit01</Filter>
+    </ClInclude>
+    <ClInclude Include="1.6.h">
+      <Filter>Unit01</Filter>
+    </ClInclude>
+    <ClInclude Include="1.7.h">
+      <Filter>Unit01</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MazeRunner.cpp">
@@ -33,6 +57,27 @@
     </ClCompile>
     <ClCompile Include="pch.cpp">
       <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Nauka\C\1.Wskaźniki i napisy\1.1.cpp">
+      <Filter>Unit01</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Nauka\C\1.Wskaźniki i napisy\1.2.cpp">
+      <Filter>Unit01</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Nauka\C\1.Wskaźniki i napisy\1.3.cpp">
+      <Filter>Unit01</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Nauka\C\1.Wskaźniki i napisy\1.4.cpp">
+      <Filter>Unit01</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Nauka\C\1.Wskaźniki i napisy\1.5.cpp">
+      <Filter>Unit01</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Nauka\C\1.Wskaźniki i napisy\1.6 .cpp">
+      <Filter>Unit01</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Nauka\C\1.Wskaźniki i napisy\1.7.cpp">
+      <Filter>Unit01</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

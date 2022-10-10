@@ -14,5 +14,5 @@ string exit_program_label = "Exit";
 // Other labels
 string sort_elements = "Sort elements: ";
 
-
+// Constans for exercises
 

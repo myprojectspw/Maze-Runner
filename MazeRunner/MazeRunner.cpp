@@ -1,16 +1,62 @@
-﻿
+﻿// include system liblaries
 #include <iostream>
 #include <assert.h>
 #include <cstdlib>
 #include <string>
+
+// include main liblaries
 #include "sorting.h"
 #include "mazerunner.h"
 #include "utils.h"
 #include "constans.h"
+
+// include exercises
+#include "1.1.h"
+#include "1.2.h"
+#include "1.3.h"
+#include "1.4.h"
+#include "1.5.h"
+#include "1.6.h"
+#include "1.7.h"
 using namespace std;
+
+void excercises_01() {
+	int option;
+	cout << "Select excercises: (1-7)" << endl;
+	cin >> option;
+	
+	switch (option)
+	{
+		case 1:
+			excercise0101_main();
+			break;
+		case 2:
+			excercise0102_main();
+			break;
+		case 3:
+			excercise0103_main();
+			break;
+		case 4:
+			excercise0104_main();
+			break;
+		case 5:
+			excercise0105_main();
+			break;
+		case 6:
+			excercise0106_main();
+			break;
+		case 7:
+			excercise0107_main();
+			break;
+		default:
+			break;
+	}
+}
 
 int main()
 {
+	excercises_01();
+
 	int n;
 	do
 	{
