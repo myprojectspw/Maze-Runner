@@ -1,4 +1,4 @@
-(https://github.com/myprojectspw/Maze-Runner/actions/workflows/github-actions-demo.yml/badge.svg)
+[![Actions Status](https://github.com/myprojectspw/Maze-Runner/actions/workflows/github-actions-demo.yml/badge.svg)](https://github.com/pawo97/myprojectspw/Maze-Runner/actions)
 # Maze-Runner
 A program implements two algorithms: </br>
 ->algorithm to find a way between two points in the labirynth. It is based on recursive and trees with pointers. </br>
