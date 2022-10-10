@@ -1,6 +1,6 @@
 ﻿// include system liblaries
 #include <iostream>
-#include <assert.h>
+//#include <assert.h>
 #include <cstdlib>
 #include <string>
 
@@ -11,13 +11,13 @@
 #include "constans.h"
 
 // include exercises
-#include "1.1.h"
-#include "1.2.h"
-#include "1.3.h"
-#include "1.4.h"
-#include "1.5.h"
-#include "1.6.h"
-#include "1.7.h"
+#include "../unit1/1.1.h"
+#include "../unit1/1.2.h"
+#include "../unit1/1.3.h"
+#include "../unit1/1.4.h"
+#include "../unit1/1.5.h"
+#include "../unit1/1.6.h"
+#include "../unit1/1.7.h"
 using namespace std;
 
 void excercises_01() {
